@@ -25,18 +25,18 @@ const Footer: React.FC = () => {
         <h1 className="text-6xl md:text-8xl font-black tracking-tighter uppercase mb-4">THEART</h1>
         <div className="text-sm md:text-base font-bold tracking-widest text-gray-400 uppercase space-y-2">
             <p>{t.footer.location}</p>
-            <p>+82 2 512 6756</p>
+            <p>+82 10 9584 9901</p>
             <p className="text-white hover:text-red-500 cursor-pointer">info@theartdance.com</p>
         </div>
       </div>
 
       <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 pt-8 border-t border-zinc-900">
         <div className="mb-4 md:mb-0">
-            <p>&copy; 2024 THEART DANCE STUDIO. {t.footer.rights}</p>
+            <p>&copy; 2017 THEART DANCE STUDIO. {t.footer.rights}</p>
         </div>
         <div className="flex space-x-6">
-            <a href="#" className="hover:text-white transition-colors"><Instagram size={20} /></a>
-            <a href="#" className="hover:text-white transition-colors"><Youtube size={20} /></a>
+            <a href="https://www.instagram.com/theart_dance_studio?igsh=a2J6ZnZ2d3N3a20z" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors"><Instagram size={20} /></a>
+            <a href="https://www.youtube.com/@THEART_DANCE_STUDIO" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors"><Youtube size={20} /></a>
             <a href="#" className="hover:text-white transition-colors"><Twitter size={20} /></a>
         </div>
       </div>
