@@ -38,10 +38,13 @@ const SplitSection: React.FC = () => {
                 K-POP<br />MUSIC VIDEO
             </h3>
             
-            <button className="flex items-center space-x-3 text-sm font-bold uppercase hover:text-red-500 transition-colors tracking-[0.2em] pointer-events-auto mt-8 border-b-2 border-transparent hover:border-red-500 pb-1">
+            <a 
+                href="https://dapper-peony-31a555.netlify.app"
+                className="flex items-center space-x-3 text-sm font-bold uppercase hover:text-red-500 transition-colors tracking-[0.2em] pointer-events-auto mt-8 border-b-2 border-transparent hover:border-red-500 pb-1"
+            >
                 <span>WATCH NOW</span>
                 <Play size={14} fill="currentColor" />
-            </button>
+            </a>
         </div>
       </div>
 
