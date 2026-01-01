@@ -1,17 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Globe, User as UserIcon, LogOut } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { useAuth } from '../contexts/AuthContext';
 import { Language } from '../types';
-import AuthModal from './AuthModal';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
-  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
-  const { user, logout } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,29 +56,6 @@ const Navbar: React.FC = () => {
               );
             })}
             <span className="opacity-50">|</span>
-            
-            {user ? (
-              <div className="flex items-center space-x-4">
-                <div className="flex items-center space-x-2 text-red-500 font-black">
-                  <UserIcon size={16} />
-                  <span>{user.name.toUpperCase()}</span>
-                </div>
-                <button 
-                  onClick={logout}
-                  className="text-zinc-500 hover:text-white transition-colors flex items-center space-x-1 cursor-pointer"
-                  title="Logout"
-                >
-                  <LogOut size={16} />
-                </button>
-              </div>
-            ) : (
-              <button 
-                onClick={() => setIsAuthModalOpen(true)}
-                className="hover:text-red-500 cursor-pointer focus:outline-none uppercase font-black tracking-widest transition-colors py-2 active:scale-95 touch-manipulation"
-              >
-                {t.nav.account}
-              </button>
-            )}
             
             <div className="relative">
               <button 
@@ -144,29 +117,6 @@ const Navbar: React.FC = () => {
               );
             })}
             
-            {user ? (
-              <div className="py-6 flex flex-col items-center space-y-4 border-b border-white/5">
-                <span className="text-red-600 font-black text-xl">{user.name.toUpperCase()}</span>
-                <button 
-                  onClick={() => { logout(); setIsOpen(false); }}
-                  className="text-zinc-500 font-bold tracking-widest flex items-center space-x-2"
-                >
-                  <LogOut size={18} />
-                  <span>LOGOUT</span>
-                </button>
-              </div>
-            ) : (
-              <button 
-                onClick={() => {
-                  setIsOpen(false);
-                  setIsAuthModalOpen(true);
-                }}
-                className="block py-6 hover:text-red-600 text-lg border-b border-white/5 active:bg-white/5 transition-colors uppercase font-black tracking-widest touch-manipulation cursor-pointer"
-              >
-                {t.nav.account}
-              </button>
-            )}
-
             <div className="flex justify-center space-x-4 pt-10 mt-4">
                {languages.map((lang) => (
                    <button 
@@ -184,8 +134,6 @@ const Navbar: React.FC = () => {
           </div>
         )}
       </nav>
-
-      <AuthModal isOpen={isAuthModalOpen} onClose={() => setIsAuthModalOpen(false)} />
     </>
   );
 };
