@@ -4,21 +4,33 @@ import { useLanguage } from '../contexts/LanguageContext';
 
 const Footer: React.FC = () => {
   const { t } = useLanguage();
+  const EXTERNAL_LINK = "https://stupendous-shortbread-e6c2e2.netlify.app";
+
   return (
     <footer className="bg-black text-white pt-20 pb-10 border-t border-zinc-900">
       <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
         
         {/* FAQ Section */}
-        <div className="border-l-2 border-zinc-800 pl-8">
-            <h4 className="text-xl font-bold mb-2 text-gray-500 uppercase">{t.footer.faq}</h4>
-            <h2 className="text-5xl font-black uppercase tracking-tighter">{t.footer.faq}</h2>
-        </div>
+        <a 
+          href={EXTERNAL_LINK} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="group border-l-2 border-zinc-800 pl-8 cursor-pointer block hover:border-red-600 transition-colors duration-300"
+        >
+            <h4 className="text-xl font-bold mb-2 text-gray-500 uppercase group-hover:text-red-500 transition-colors">{t.footer.faq}</h4>
+            <h2 className="text-5xl font-black uppercase tracking-tighter group-hover:text-white transition-colors">{t.footer.faq}</h2>
+        </a>
 
         {/* Contact Section */}
-        <div className="border-l-2 border-zinc-800 pl-8">
-            <h4 className="text-xl font-bold mb-2 text-gray-500 uppercase">{t.footer.contact}</h4>
-            <h2 className="text-5xl font-black uppercase tracking-tighter">{t.footer.contact}</h2>
-        </div>
+        <a 
+          href={EXTERNAL_LINK} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="group border-l-2 border-zinc-800 pl-8 cursor-pointer block hover:border-red-600 transition-colors duration-300"
+        >
+            <h4 className="text-xl font-bold mb-2 text-gray-500 uppercase group-hover:text-red-500 transition-colors">{t.footer.contact}</h4>
+            <h2 className="text-5xl font-black uppercase tracking-tighter group-hover:text-white transition-colors">{t.footer.contact}</h2>
+        </a>
       </div>
 
       <div className="container mx-auto px-6 text-center mb-16">
