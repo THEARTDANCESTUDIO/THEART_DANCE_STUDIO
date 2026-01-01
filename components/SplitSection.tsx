@@ -40,6 +40,8 @@ const SplitSection: React.FC = () => {
             
             <a 
                 href="https://dapper-peony-31a555.netlify.app"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center space-x-3 text-sm font-bold uppercase hover:text-red-500 transition-colors tracking-[0.2em] pointer-events-auto mt-8 border-b-2 border-transparent hover:border-red-500 pb-1"
             >
                 <span>WATCH NOW</span>

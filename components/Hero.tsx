@@ -5,7 +5,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 const Hero: React.FC = () => {
   const { t } = useLanguage();
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-black">
+    <section id="hero" className="relative w-full h-screen overflow-hidden bg-black">
       {/* 3D Background */}
       <div className="absolute inset-0 z-0">
          <iframe 

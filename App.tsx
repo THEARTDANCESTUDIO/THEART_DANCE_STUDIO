@@ -18,8 +18,11 @@ function App() {
       <Footer />
       <AiAssistant />
       
-      {/* Global Style for marquee animation */}
+      {/* Global Style for marquee animation and smooth scrolling */}
       <style>{`
+        html {
+          scroll-behavior: smooth;
+        }
         @keyframes marquee {
           0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }
