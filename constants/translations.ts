@@ -22,7 +22,7 @@ export const translations: Record<Language, any> = {
     }
   },
   ko: {
-    nav: { dancers: '강사 소개', classes: '수업', store: '스토어', about: '소개', account: '내 계정' },
+    nav: { dancers: '댄서', classes: '수업', store: '스토어', about: '소개', account: '내 계정' },
     hero: { subtitle: '프리미엄 댄스 스튜디오', title1: "무대 따위는", title2: '필요', title3: '없어', cta: '자세히 보기' },
     split: { viewProfile: '프로필 보기', schedule: '스케줄', viewSchedule: '전체 스케줄 보기' },
     tour: { title: '스튜디오\n가상 투어 시작하기', cta: '투어 시작' },
