@@ -9,6 +9,8 @@ const Navbar: React.FC = () => {
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
 
+  const DANCERS_LINK = "https://kaleidoscopic-moxie-80c5dc.netlify.app";
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -49,8 +51,18 @@ const Navbar: React.FC = () => {
           <div className="hidden md:flex items-center space-x-8 text-sm font-bold tracking-widest uppercase">
             {Object.entries(t.nav).map(([key, value]) => {
               if (key === 'account') return null;
+              
+              const isDancers = key === 'dancers';
+              const href = isDancers ? DANCERS_LINK : `#${key}`;
+              
               return (
-                <a key={key} href={`#${key}`} className="hover:text-red-500 transition-colors cursor-pointer">
+                <a 
+                  key={key} 
+                  href={href} 
+                  target={isDancers ? "_blank" : undefined}
+                  rel={isDancers ? "noopener noreferrer" : undefined}
+                  className="hover:text-red-500 transition-colors cursor-pointer"
+                >
                   {value as string}
                 </a>
               );
@@ -110,9 +122,20 @@ const Navbar: React.FC = () => {
           <div className="absolute top-full left-0 right-0 bg-black border-t border-gray-800 p-6 md:hidden flex flex-col space-y-4 text-center font-bold uppercase tracking-wider h-screen bg-black/95 backdrop-blur-xl">
             {Object.entries(t.nav).map(([key, value]) => {
                if (key === 'account') return null;
+               
+               const isDancers = key === 'dancers';
+               const href = isDancers ? DANCERS_LINK : `#${key}`;
+
                return (
-                  <a key={key} href={`#${key}`} onClick={() => setIsOpen(false)} className="block py-4 hover:text-red-600 text-lg border-b border-white/5 active:bg-white/5 transition-colors">
-                  {value as string}
+                  <a 
+                    key={key} 
+                    href={href}
+                    target={isDancers ? "_blank" : undefined}
+                    rel={isDancers ? "noopener noreferrer" : undefined}
+                    onClick={() => !isDancers && setIsOpen(false)} 
+                    className="block py-4 hover:text-red-600 text-lg border-b border-white/5 active:bg-white/5 transition-colors"
+                  >
+                    {value as string}
                   </a>
               );
             })}
