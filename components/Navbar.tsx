@@ -60,7 +60,7 @@ const Navbar: React.FC = () => {
             <span className="opacity-50">|</span>
             <button 
               onClick={() => setIsAuthModalOpen(true)}
-              className="hover:text-red-500 cursor-pointer focus:outline-none uppercase font-bold tracking-widest"
+              className="hover:text-red-500 cursor-pointer focus:outline-none uppercase font-black tracking-widest transition-colors py-2 active:scale-95 touch-manipulation"
             >
               {t.nav.account}
             </button>
@@ -130,7 +130,7 @@ const Navbar: React.FC = () => {
                 setIsOpen(false);
                 setIsAuthModalOpen(true);
               }}
-              className="block py-4 hover:text-red-600 text-lg border-b border-white/5 active:bg-white/5 transition-colors uppercase font-bold tracking-widest"
+              className="block py-6 hover:text-red-600 text-lg border-b border-white/5 active:bg-white/5 transition-colors uppercase font-black tracking-widest touch-manipulation cursor-pointer"
             >
               {t.nav.account}
             </button>
