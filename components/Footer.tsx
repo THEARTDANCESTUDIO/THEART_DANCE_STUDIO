@@ -13,8 +13,7 @@ const Footer: React.FC = () => {
         {/* FAQ Section */}
         <a 
           href={EXTERNAL_LINK} 
-          target="_blank" 
-          rel="noopener noreferrer" 
+          target="_self"
           className="group border-l-2 border-zinc-800 pl-8 cursor-pointer block hover:border-red-600 transition-colors duration-300"
         >
             <h4 className="text-xl font-bold mb-2 text-gray-500 uppercase group-hover:text-red-500 transition-colors">{t.footer.faq}</h4>
@@ -24,8 +23,7 @@ const Footer: React.FC = () => {
         {/* Contact Section */}
         <a 
           href={EXTERNAL_LINK} 
-          target="_blank" 
-          rel="noopener noreferrer" 
+          target="_self"
           className="group border-l-2 border-zinc-800 pl-8 cursor-pointer block hover:border-red-600 transition-colors duration-300"
         >
             <h4 className="text-xl font-bold mb-2 text-gray-500 uppercase group-hover:text-red-500 transition-colors">{t.footer.contact}</h4>

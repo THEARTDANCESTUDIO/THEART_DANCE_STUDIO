@@ -9,6 +9,7 @@ const Navbar: React.FC = () => {
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
 
+  const HOME_LINK = "https://theartdancestudio1120.netlify.app";
   const DANCERS_LINK = "https://kaleidoscopic-moxie-80c5dc.netlify.app";
 
   useEffect(() => {
@@ -18,15 +19,6 @@ const Navbar: React.FC = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const handleLogoClick = (e: React.MouseEvent | React.TouchEvent) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-    setIsOpen(false);
-  };
 
   const languages: { code: Language; label: string }[] = [
     { code: 'en', label: 'EN' },
@@ -40,8 +32,7 @@ const Navbar: React.FC = () => {
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-black/90 backdrop-blur-md py-4' : 'bg-transparent py-6'}`}>
         <div className="container mx-auto px-6 flex justify-between items-center">
           <a 
-            href="#hero" 
-            onClick={handleLogoClick}
+            href={HOME_LINK} 
             className="text-2xl font-black tracking-tighter uppercase cursor-pointer hover:opacity-80 transition-opacity touch-manipulation block py-2"
           >
             THEART<span className="text-red-600">.</span>
@@ -59,8 +50,7 @@ const Navbar: React.FC = () => {
                 <a 
                   key={key} 
                   href={href} 
-                  target={isDancers ? "_blank" : undefined}
-                  rel={isDancers ? "noopener noreferrer" : undefined}
+                  target="_self"
                   className="hover:text-red-500 transition-colors cursor-pointer"
                 >
                   {value as string}
@@ -130,8 +120,7 @@ const Navbar: React.FC = () => {
                   <a 
                     key={key} 
                     href={href}
-                    target={isDancers ? "_blank" : undefined}
-                    rel={isDancers ? "noopener noreferrer" : undefined}
+                    target="_self"
                     onClick={() => !isDancers && setIsOpen(false)} 
                     className="block py-4 hover:text-red-600 text-lg border-b border-white/5 active:bg-white/5 transition-colors"
                   >

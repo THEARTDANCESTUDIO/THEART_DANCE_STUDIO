@@ -2,8 +2,6 @@
 import { GoogleGenAI } from "@google/genai";
 import { ChatMessage } from "../types";
 
-const apiKey = process.env.API_KEY || '';
-
 // System instruction to give the AI context about the studio
 const SYSTEM_INSTRUCTION = `
 You are 'Artie', the AI assistant for THEART DANCE STUDIO.
@@ -29,14 +27,11 @@ Guidelines:
 `;
 
 export const sendMessageToGemini = async (history: ChatMessage[], newMessage: string): Promise<string> => {
-  if (!apiKey) {
-    return "I'm sorry, I'm currently offline (API Key missing). Please contact the front desk.";
-  }
-
   try {
-    const ai = new GoogleGenAI({ apiKey });
+    // Initialize inside the function to ensure process.env.API_KEY is captured correctly
+    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY as string });
     
-    // Create a chat session
+    // Create a chat session with the specified model
     const chat = ai.chats.create({
       model: 'gemini-3-flash-preview',
       config: {
@@ -52,6 +47,7 @@ export const sendMessageToGemini = async (history: ChatMessage[], newMessage: st
     return result.text || "I didn't catch that beat. Could you ask again?";
   } catch (error) {
     console.error("Gemini Error:", error);
-    return "Sorry, I'm having trouble connecting to the studio server right now.";
+    // Return a graceful error message instead of a hardcoded offline block
+    return "I'm having a bit of trouble connecting to the studio network. Please try again in a moment! ⚡️";
   }
 };
