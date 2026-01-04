@@ -4,7 +4,8 @@ import { useLanguage } from '../contexts/LanguageContext';
 
 const Footer: React.FC = () => {
   const { t } = useLanguage();
-  const EXTERNAL_LINK = "https://stupendous-shortbread-e6c2e2.netlify.app";
+  const FAQ_LINK = "https://stupendous-shortbread-e6c2e2.netlify.app";
+  const CONTACT_LINK = "https://vocal-fairy-ef3f8a.netlify.app";
 
   return (
     <footer className="bg-black text-white pt-20 pb-10 border-t border-zinc-900">
@@ -12,7 +13,7 @@ const Footer: React.FC = () => {
         
         {/* FAQ Section */}
         <a 
-          href={EXTERNAL_LINK} 
+          href={FAQ_LINK} 
           target="_self"
           className="group border-l-2 border-zinc-800 pl-8 cursor-pointer block hover:border-red-600 transition-colors duration-300"
         >
@@ -22,7 +23,7 @@ const Footer: React.FC = () => {
 
         {/* Contact Section */}
         <a 
-          href={EXTERNAL_LINK} 
+          href={CONTACT_LINK} 
           target="_self"
           className="group border-l-2 border-zinc-800 pl-8 cursor-pointer block hover:border-red-600 transition-colors duration-300"
         >
