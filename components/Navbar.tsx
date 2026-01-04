@@ -11,6 +11,7 @@ const Navbar: React.FC = () => {
 
   const HOME_LINK = "https://theartdancestudio1120.netlify.app";
   const DANCERS_LINK = "https://kaleidoscopic-moxie-80c5dc.netlify.app";
+  const CLASSES_LINK = "https://illustrious-pegasus-596112.netlify.app";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,8 +44,9 @@ const Navbar: React.FC = () => {
             {Object.entries(t.nav).map(([key, value]) => {
               if (key === 'account') return null;
               
-              const isDancers = key === 'dancers';
-              const href = isDancers ? DANCERS_LINK : `#${key}`;
+              let href = `#${key}`;
+              if (key === 'dancers') href = DANCERS_LINK;
+              if (key === 'classes') href = CLASSES_LINK;
               
               return (
                 <a 
@@ -113,15 +115,18 @@ const Navbar: React.FC = () => {
             {Object.entries(t.nav).map(([key, value]) => {
                if (key === 'account') return null;
                
-               const isDancers = key === 'dancers';
-               const href = isDancers ? DANCERS_LINK : `#${key}`;
+               let href = `#${key}`;
+               if (key === 'dancers') href = DANCERS_LINK;
+               if (key === 'classes') href = CLASSES_LINK;
+               
+               const isExternal = key === 'dancers' || key === 'classes';
 
                return (
                   <a 
                     key={key} 
                     href={href}
                     target="_self"
-                    onClick={() => !isDancers && setIsOpen(false)} 
+                    onClick={() => !isExternal && setIsOpen(false)} 
                     className="block py-4 hover:text-red-600 text-lg border-b border-white/5 active:bg-white/5 transition-colors"
                   >
                     {value as string}
