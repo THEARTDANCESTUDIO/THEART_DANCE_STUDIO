@@ -6,6 +6,7 @@ const KPOP_VIDEO_ID = 'fEBETzsJenI';
 
 const SplitSection: React.FC = () => {
   const { t } = useLanguage();
+  const SCHEDULE_LINK = "https://illustrious-pegasus-596112.netlify.app";
 
   return (
     <section className="flex flex-col md:flex-row w-full min-h-[800px] border-t border-gray-900">
@@ -57,10 +58,14 @@ const SplitSection: React.FC = () => {
             <h3 className="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter mb-6 leading-none text-white pointer-events-none select-none">
                 {t.split.schedule}
             </h3>
-            <button className="flex items-center space-x-3 text-sm font-bold uppercase text-white hover:text-red-500 transition-all tracking-[0.2em] mt-8 border-b-2 border-transparent hover:border-red-500 pb-1 cursor-pointer active:scale-95 touch-manipulation">
+            <a 
+                href={SCHEDULE_LINK}
+                target="_self"
+                className="flex items-center space-x-3 text-sm font-bold uppercase text-white hover:text-red-500 transition-all tracking-[0.2em] mt-8 border-b-2 border-transparent hover:border-red-500 pb-1 cursor-pointer active:scale-95 touch-manipulation"
+            >
                 <span>{t.split.viewSchedule}</span>
                 <ArrowRight size={14} />
-            </button>
+            </a>
         </div>
       </div>
     </section>
