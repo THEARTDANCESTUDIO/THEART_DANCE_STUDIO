@@ -9,7 +9,7 @@ const VirtualTour: React.FC = () => {
   return (
     <section className="relative w-full h-[60vh] md:h-[80vh] bg-zinc-900 overflow-hidden group">
       <img 
-        src="https://picsum.photos/1920/1080?grayscale" 
+        src="https://youtu.be/Q4qg81KQD-U?si=uAgUVdjU0kfAve4N" 
         alt="Studio Interior" 
         className="absolute inset-0 w-full h-full object-cover opacity-60 transition-transform duration-1000"
       />
