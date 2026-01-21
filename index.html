@@ -18,9 +18,12 @@
     
     <link rel="canonical" href="https://theartdancestudio.com" />
 
-    <!-- Process Env Shim for Browser -->
+    <!-- Debugging & Process Shim -->
     <script>
-      window.process = window.process || { env: { API_KEY: "" } };
+      window.process = { env: { API_KEY: "" } };
+      window.addEventListener('error', function(e) {
+        console.error('Runtime Error:', e.message, 'at', e.filename, ':', e.lineno);
+      });
     </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -32,19 +35,10 @@
         color: #ffffff;
         margin: 0;
       }
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #111;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #333;
-        border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #555;
-      }
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: #111; }
+      ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+      ::-webkit-scrollbar-thumb:hover { background: #555; }
     </style>
 
     <script type="importmap">
@@ -53,10 +47,10 @@
     "react": "https://esm.sh/react@19.0.0",
     "react-dom": "https://esm.sh/react-dom@19.0.0",
     "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
-    "lucide-react": "https://esm.sh/lucide-react@0.460.0",
+    "lucide-react": "https://esm.sh/lucide-react@0.460.0?external=react",
     "@google/genai": "https://esm.sh/@google/genai@1.3.0",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/"
   }
 }
 </script>
