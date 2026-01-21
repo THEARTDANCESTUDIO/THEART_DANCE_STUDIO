@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageSquare, Send, X, Sparkles, Loader2 } from 'lucide-react';
-import { sendMessageToGemini } from '../services/geminiService.ts';
-import { ChatMessage } from '../types.ts';
-import { useLanguage } from '../contexts/LanguageContext.tsx';
+import { sendMessageToGemini } from '../services/geminiService';
+import { ChatMessage } from '../types';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const AiAssistant: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);

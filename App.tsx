@@ -1,11 +1,11 @@
 import React from 'react';
-import Navbar from './components/Navbar.tsx';
-import Hero from './components/Hero.tsx';
-import SplitSection from './components/SplitSection.tsx';
-import Ticker from './components/Ticker.tsx';
-import VirtualTour from './components/VirtualTour.tsx';
-import Footer from './components/Footer.tsx';
-import AiAssistant from './components/AiAssistant.tsx';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import SplitSection from './components/SplitSection';
+import Ticker from './components/Ticker';
+import VirtualTour from './components/VirtualTour';
+import Footer from './components/Footer';
+import AiAssistant from './components/AiAssistant';
 
 function App() {
   return (

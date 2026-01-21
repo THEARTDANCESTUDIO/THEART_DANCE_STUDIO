@@ -17,9 +17,9 @@
     
     <link rel="canonical" href="https://theartdancestudio.com" />
 
-    <!-- Debugging & Process Shim -->
+    <!-- Process Env Shim & Error Handling -->
     <script>
-      window.process = { env: { API_KEY: "" } };
+      window.process = window.process || { env: { API_KEY: "" } };
       window.addEventListener('error', function(e) {
         console.error('Runtime Error:', e.message, 'at', e.filename, ':', e.lineno);
       });
