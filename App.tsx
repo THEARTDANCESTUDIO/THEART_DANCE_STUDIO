@@ -5,7 +5,6 @@ import SplitSection from './components/SplitSection';
 import Ticker from './components/Ticker';
 import VirtualTour from './components/VirtualTour';
 import Footer from './components/Footer';
-import AiAssistant from './components/AiAssistant';
 
 function App() {
   return (
@@ -16,7 +15,6 @@ function App() {
       <Ticker />
       <VirtualTour />
       <Footer />
-      <AiAssistant />
       
       <style>{`
         html {

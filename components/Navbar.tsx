@@ -36,6 +36,7 @@ const Navbar: React.FC = () => {
             THEART<span className="text-red-600">.</span>
           </a>
 
+          {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-8 text-sm font-bold tracking-widest uppercase">
             {Object.entries(t.nav).map(([key, value]) => {
               if (key === 'account') return null;
@@ -69,6 +70,7 @@ const Navbar: React.FC = () => {
             </div>
           </div>
 
+          {/* Mobile Menu Toggle */}
           <div className="md:hidden flex items-center space-x-4">
             <button onClick={() => setIsOpen(!isOpen)} className="text-white p-2">
               {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -76,19 +78,46 @@ const Navbar: React.FC = () => {
           </div>
         </div>
 
+        {/* Mobile Menu Overlay */}
         {isOpen && (
-          <div className="absolute top-full left-0 right-0 bg-black border-t border-gray-800 p-6 md:hidden flex flex-col space-y-4 text-center h-screen bg-black/95 backdrop-blur-xl">
-            {Object.entries(t.nav).map(([key, value]) => {
-               if (key === 'account') return null;
-               let href = `#${key}`;
-               if (key === 'dancers') href = DANCERS_LINK;
-               if (key === 'classes') href = CLASSES_LINK;
-               return (
-                  <a key={key} href={href} target="_self" onClick={() => setIsOpen(false)} className="block py-4 hover:text-red-600 text-lg border-b border-white/5 uppercase font-bold">
-                    {value as string}
-                  </a>
-              );
-            })}
+          <div className="fixed inset-0 top-0 left-0 w-full h-screen bg-black/95 backdrop-blur-xl z-40 flex flex-col p-8 md:hidden">
+            <div className="flex justify-between items-center mb-12">
+               <span className="text-2xl font-black tracking-tighter uppercase">THEART<span className="text-red-600">.</span></span>
+               <button onClick={() => setIsOpen(false)} className="text-white"><X size={32} /></button>
+            </div>
+            
+            <div className="flex flex-col space-y-6 text-center">
+              {Object.entries(t.nav).map(([key, value]) => {
+                 if (key === 'account') return null;
+                 let href = `#${key}`;
+                 if (key === 'dancers') href = DANCERS_LINK;
+                 if (key === 'classes') href = CLASSES_LINK;
+                 return (
+                    <a key={key} href={href} target="_self" onClick={() => setIsOpen(false)} className="block py-2 hover:text-red-600 text-3xl uppercase font-black tracking-tighter">
+                      {value as string}
+                    </a>
+                );
+              })}
+            </div>
+
+            {/* Mobile Language Selector */}
+            <div className="mt-auto pb-12">
+              <div className="flex items-center justify-center space-x-2 text-zinc-500 mb-4 uppercase tracking-[0.2em] font-bold text-xs">
+                <Globe size={14} />
+                <span>Select Language</span>
+              </div>
+              <div className="grid grid-cols-4 gap-2">
+                {languages.map((lang) => (
+                  <button 
+                    key={lang.code} 
+                    onClick={() => { setLanguage(lang.code); setIsOpen(false); }} 
+                    className={`py-3 rounded-lg border font-bold text-sm transition-all ${language === lang.code ? 'bg-red-600 border-red-600 text-white' : 'bg-zinc-900 border-zinc-800 text-zinc-400'}`}
+                  >
+                    {lang.label}
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
         )}
       </nav>
