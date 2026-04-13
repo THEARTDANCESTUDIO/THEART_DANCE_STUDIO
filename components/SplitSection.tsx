@@ -35,7 +35,7 @@ const SplitSection: React.FC = () => {
             </h3>
             
             <a 
-                href="https://dapper-peony-31a555.netlify.app"
+                href="https://theartdancestudio-mv.netlify.app"
                 target="_self"
                 className="inline-flex items-center space-x-3 text-sm font-bold uppercase text-white hover:text-red-500 transition-all tracking-[0.2em] mt-8 border-b-2 border-transparent hover:border-red-500 pb-1 cursor-pointer active:scale-95 touch-manipulation"
             >
