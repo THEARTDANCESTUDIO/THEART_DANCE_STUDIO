@@ -10,7 +10,7 @@ const Navbar: React.FC = () => {
   const { language, setLanguage, t } = useLanguage();
 
   const HOME_LINK = "https://theartdancestudio1120.netlify.app";
-  const DANCERS_LINK = "https://kaleidoscopic-moxie-80c5dc.netlify.app";
+  const DANCERS_LINK = "https://theart-dancer.netlify.app";
   const CLASSES_LINK = "https://illustrious-pegasus-596112.netlify.app";
 
   useEffect(() => {
