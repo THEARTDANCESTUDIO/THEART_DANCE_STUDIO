@@ -15,7 +15,7 @@ Class Tiers & Pricing:
 Key Information:
 - Genres: Hip-hop, K-Pop, Contemporary, Popping, Jazz.
 - Opening Hours: Mon-Fri 1pm - 11pm, Sat-Sun 12pm - 10pm.
-- Contact: info@theartdance.com
+- Contact: theart1120@naver.com (010.9584.9901)
 - Location: Seoul, South Korea.
 - Programs: Includes "Global One" for international students.
 

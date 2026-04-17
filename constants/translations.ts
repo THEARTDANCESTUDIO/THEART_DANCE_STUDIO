@@ -27,7 +27,7 @@ export const translations: Record<Language, any> = {
     split: { viewProfile: '프로필 보기', schedule: '스케줄', viewSchedule: '전체 스케줄 보기' },
     tour: { title: '스튜디오\n가상 투어 시작하기', cta: '투어 시작' },
     footer: { faq: '자주 묻는 질문', contact: '문의하기', rights: '모든 권리 보유.', location: '댄스 스튜디오 본사' },
-    ai: { initial: "안녕하세요! 아티입니다. 수업, 시간표, 가격에 대해 물어보세요." },
+    ai: { initial: "이메일 theart1120@naver.com (010.9584.9901)으로 문의 주시면 빠르게 답변 드릴게요! 📧 운영 시간은 평일 13:00~23:00, 주말 12:00~22:00 이니 참고 부탁드립니다. ⚡️ 언제든 편하게 연락 주세요!" },
     auth: {
       login: "로그인",
       signup: "회원가입",

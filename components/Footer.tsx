@@ -36,8 +36,8 @@ const Footer: React.FC = () => {
         <h1 className="text-6xl md:text-8xl font-black tracking-tighter uppercase mb-4">THEART</h1>
         <div className="text-sm md:text-base font-bold tracking-widest text-gray-400 uppercase space-y-2">
             <p>{t.footer.location}</p>
-            <p>+82 10 9584 9901</p>
-            <p className="text-white hover:text-red-500 cursor-pointer">info@theartdance.com</p>
+            <p>010.9584.9901</p>
+            <p className="text-white hover:text-red-500 cursor-pointer">theart1120@naver.com</p>
         </div>
       </div>
 
