@@ -4,8 +4,8 @@ import { useLanguage } from '../contexts/LanguageContext';
 
 const Footer: React.FC = () => {
   const { t } = useLanguage();
-  const FAQ_LINK = "https://stupendous-shortbread-e6c2e2.netlify.app";
-  const CONTACT_LINK = "https://vocal-fairy-ef3f8a.netlify.app";
+  const FAQ_LINK = "https://theart-faq.netlify.app";
+  const CONTACT_LINK = "https://theart-contact.netlify.app";
 
   return (
     <footer className="bg-black text-white pt-20 pb-10 border-t border-zinc-900">

@@ -46,7 +46,7 @@ export const translations: Record<Language, any> = {
     hero: { subtitle: 'プレミアムダンススタジオ', title1: "K-POPアイドルが", title2: "誕生する", title3: "場所", cta: '詳細を見る' },
     split: { viewProfile: 'プロフィールを見る', schedule: 'スケジュール', viewSchedule: '全スケジュールを見る' },
     tour: { title: 'スタジオの\nバーチャルツアー', cta: 'ツアー開始' },
-    footer: { faq: 'よくある質問', contact: 'お問い合わせ', rights: 'All Rights Reserved.', location: 'ダンススタジオ 本社' },
+    footer: { faq: 'よくある質問', contact: 'お問い合わせ', rights: 'All Rights Reserved.', location: '댄스 스튜디오 본사' },
     ai: { initial: "こんにちは！アーティです。クラス、スケジュール、料金についてお尋ねください。" },
     auth: {
       login: "로그인",
@@ -66,7 +66,7 @@ export const translations: Record<Language, any> = {
     hero: { subtitle: '高端舞蹈工作室', title1: "K-POP偶像", title2: "诞生的", title3: "地方", cta: '了解更多' },
     split: { viewProfile: '查看个人资料', schedule: '课程表', viewSchedule: '查看完整课程表' },
     tour: { title: '参观我们的\n虚拟工作室', cta: '开始参观' },
-    footer: { faq: '常见问题', contact: '联系我们', rights: '保留所有权利。', location: '舞蹈工作室 总部' },
+    footer: { faq: '常见问题', contact: '联系 we', rights: '保留所有权利。', location: '舞蹈工作室 总部' },
     ai: { initial: "你好！我是Artie。询问有关课程、时间表 or 价格的信息。" },
     auth: {
       login: "登录",

@@ -6,7 +6,7 @@ const KPOP_VIDEO_ID = 'fEBETzsJenI';
 
 const SplitSection: React.FC = () => {
   const { t } = useLanguage();
-  const SCHEDULE_LINK = "https://illustrious-pegasus-596112.netlify.app";
+  const SCHEDULE_LINK = "https://theart-schedule.netlify.app";
 
   return (
     <section className="flex flex-col md:flex-row w-full min-h-[800px] border-t border-gray-900">

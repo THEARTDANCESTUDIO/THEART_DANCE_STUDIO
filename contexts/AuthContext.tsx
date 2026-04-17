@@ -21,12 +21,15 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   const login = async (email: string, name: string = 'User', provider: User['provider'] = 'email') => {
     setIsLoading(true);
-    await new Promise(resolve => setTimeout(resolve, 800));
+    // Simulate API delay
+    await new Promise(resolve => setTimeout(resolve, 1500));
     setUser({ email, name, provider });
     setIsLoading(false);
   };
 
-  const logout = () => setUser(null);
+  const logout = () => {
+    setUser(null);
+  };
 
   return (
     <AuthContext.Provider value={{ user, login, logout, isLoading }}>

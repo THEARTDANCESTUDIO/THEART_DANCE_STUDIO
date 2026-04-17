@@ -1,6 +1,7 @@
 import { GoogleGenAI } from "@google/genai";
 import { ChatMessage } from "../types";
 
+// System instruction to give the AI context about the studio
 const SYSTEM_INSTRUCTION = `
 You are 'Artie', the AI assistant for THEART DANCE STUDIO.
 The studio is located in Seoul, South Korea.
@@ -26,14 +27,10 @@ Guidelines:
 
 export const sendMessageToGemini = async (history: ChatMessage[], newMessage: string): Promise<string> => {
   try {
-    const apiKey = process?.env?.API_KEY;
-    if (!apiKey) {
-      console.warn("API Key is missing. Check your environment settings.");
-      return "I'm currently in power-saving mode. Please check back later! ⚡️";
-    }
-
-    const ai = new GoogleGenAI({ apiKey });
+    // Initialize inside the function to ensure process.env.API_KEY is captured correctly
+    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY as string });
     
+    // Create a chat session with the specified model
     const chat = ai.chats.create({
       model: 'gemini-3-flash-preview',
       config: {
@@ -49,6 +46,7 @@ export const sendMessageToGemini = async (history: ChatMessage[], newMessage: st
     return result.text || "I didn't catch that beat. Could you ask again?";
   } catch (error) {
     console.error("Gemini Error:", error);
+    // Return a graceful error message instead of a hardcoded offline block
     return "I'm having a bit of trouble connecting to the studio network. Please try again in a moment! ⚡️";
   }
 };

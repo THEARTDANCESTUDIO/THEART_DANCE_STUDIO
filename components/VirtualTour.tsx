@@ -4,7 +4,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 
 const VirtualTour: React.FC = () => {
   const { t } = useLanguage();
-  const TOUR_LINK = "https://sparkly-basbousa-23afdf.netlify.app";
+  const TOUR_LINK = "https://theart360vr.netlify.app/";
   const VIDEO_ID = "Q4qg81KQD-U";
 
   return (
